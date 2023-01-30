@@ -1,0 +1,21 @@
+<template>
+	<div class="page centralize-container">
+		<FormLogin />
+	</div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import FormLogin from "@/components/organisms/Forms/FormLogin.vue";
+
+export default defineComponent({
+    name: "Login",
+    components: { FormLogin }
+});
+</script>
+
+<style lang="sass" scoped>
+.page
+	background-color: #006CA5
+	height: 100vh
+</style>
