@@ -2,7 +2,7 @@
 	<form @submit.prevent="$emit('formAction', user)">
 		<BaseInput
 			placeholder="Digite seu e-mail"
-			v-model="user.email"
+			v-model="user.employee_email"
 		/>
 		<BaseInput
 			placeholder="Digite sua senha"
@@ -31,7 +31,7 @@ export default defineComponent({
 	data() {
 		return {
 			user: {
-				email:'',
+				employee_email:'',
 				password: '',
 			}
 		}

@@ -9,8 +9,8 @@ import { defineComponent } from "vue";
 import FormLogin from "@/components/organisms/Forms/FormLogin.vue";
 
 export default defineComponent({
-    name: "Login",
-    components: { FormLogin }
+	name: "Login",
+	components: { FormLogin }
 });
 </script>
 

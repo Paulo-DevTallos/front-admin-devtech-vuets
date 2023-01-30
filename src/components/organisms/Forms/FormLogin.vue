@@ -24,7 +24,7 @@ export default defineComponent({
 	},
 	methods: {
 		login(user: object) {
-			console.log(user)
+			this.$store.dispatch('employeeStore/login', user)
 		}
 	}
 });
