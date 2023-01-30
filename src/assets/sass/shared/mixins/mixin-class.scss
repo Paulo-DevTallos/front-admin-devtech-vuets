@@ -1,0 +1,10 @@
+@mixin alignment-display($flex, $justify, $align) {
+	display: $flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+// classes responsable to set alignments
+.centralize-container {
+	@include alignment-display( flex, center, center);
+}
