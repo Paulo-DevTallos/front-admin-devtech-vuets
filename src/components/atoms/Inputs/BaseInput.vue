@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="input-container">
 		<input
 			v-bind="$attrs"
 			v-model="inputValue"
