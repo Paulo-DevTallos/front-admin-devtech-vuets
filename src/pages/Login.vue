@@ -16,6 +16,6 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .page
-	background-color: #006CA5
+	background-image: linear-gradient(#006CA5, #009ACC)
 	height: 100vh
 </style>

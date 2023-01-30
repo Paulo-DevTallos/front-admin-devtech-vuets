@@ -28,18 +28,19 @@ export default defineComponent({
 <style lang="sass" scoped>
 .box
 	background-color: #fff
-	width: 40%
-	padding: 30px
+	width: 500px
+	padding: 30px 50px
 	border-radius: 16px
 	box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.166)
 
 	p
 		text-align: center
-		padding: 10px 80px
+		padding: 15px 0
+		font-size: 13px
 
 	&_logo
 		text-align: center
 
 		img
-			width: 30%
+			width: 40%
 </style>
