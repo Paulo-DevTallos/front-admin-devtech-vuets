@@ -1,5 +1,5 @@
 <template>
-	<span>
+	<span @click="$emit('toggle')">
 		<Icon icon="carbon:view" id="view-icon" v-if="isPassword"	/>
 		<Icon icon="carbon:view-off" id="view-icon" v-else/>
 	</span>
