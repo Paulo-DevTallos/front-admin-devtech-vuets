@@ -4,7 +4,7 @@
 			<img :src="logo" alt="logo principal">
 		</div>
 		<p>Você está no sistema de gestão da plataforma / e-commerce DevTech</p>
-		<LoginInputs />
+		<LoginInputs @formAction="login"/>
 	</div>
 </template>
 
@@ -20,6 +20,11 @@ export default defineComponent({
 	data() {
 		return {
 			logo: logo,
+		}
+	},
+	methods: {
+		login(user: object) {
+			console.log(user)
 		}
 	}
 });

@@ -1,15 +1,18 @@
 <template>
-	<form>
+	<form @submit.prevent="$emit('formAction', user)">
 		<BaseInput
 			placeholder="Digite seu e-mail"
+			v-model="user.email"
 		/>
 		<BaseInput
 			placeholder="Digite sua senha"
 			:hiddenRevellingPassword="true"
+			v-model="user.password"
 		/>
 		<div class="btn-container">
 			<MainButton
 				class="common-btn"
+				type="submit"
 				:btn_title="'Realizar Login'"
 			/>
 		</div>
@@ -23,7 +26,16 @@ import MainButton from "@/components/atoms/Button/MainButton.vue";
 
 export default defineComponent({
 	name: "LoginInputs",
-	components: { BaseInput, MainButton }
+	components: { BaseInput, MainButton },
+	emits: ['formAction'],
+	data() {
+		return {
+			user: {
+				email:'',
+				password: '',
+			}
+		}
+	},
 });
 </script>
 
