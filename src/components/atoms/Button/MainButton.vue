@@ -1,5 +1,5 @@
 <template>
-	<button class="base-style">
+	<button class="base-style" @click="$emit('action')">
 		{{ btn_title }}
 	</button>
 </template>
@@ -9,6 +9,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "MainButton",
+	emits: ['action'],
 	props: {
 		btn_title: {
 			type: String,
