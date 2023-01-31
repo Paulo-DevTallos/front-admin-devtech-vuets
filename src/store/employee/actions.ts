@@ -9,7 +9,9 @@ export default {
 			console.log(res)
 			const decode = jwtDecode(accessToken);
 
-			commit("LOGIN", decode)
+			commit("LOGIN", decode);
+
+			location.replace('/app/dashboard')
 		})
 	}
 }
