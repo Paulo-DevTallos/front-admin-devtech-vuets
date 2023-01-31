@@ -1,4 +1,8 @@
 <template>
+	<ToastStatus
+		:status_message="message"
+		:class="{ isModalActive: isActive, hasError: isError }"
+	/>
 	<div class="box">
 		<div class="box_logo">
 			<img :src="logo" alt="logo principal">
@@ -11,20 +15,32 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import LoginInputs from '@/components/molecules/LoginInputs/index.vue'
+import ToastStatus from "@/components/atoms/Modals/ToastStatus.vue";
 
 import logo from '@/assets/img/logo-dev-tech-nobg.png';
 
 export default defineComponent({
 	name: "FormLogin",
-	components: { LoginInputs },
+	components: { LoginInputs, ToastStatus },
 	data() {
 		return {
 			logo: logo,
+			message: '',
+			isActive: false,
+			isError: false,
 		}
 	},
 	methods: {
 		login(user: object) {
-			this.$store.dispatch('employeeStore/login', user)
+			this.$store.dispatch('employeeStore/login', user).catch((err: any) => {
+				const errorMessage = err.response.data.message;
+
+				this.isError = true;
+				this.message = errorMessage;
+				setTimeout(() => {
+					this.isError = false;
+				}, 2000);
+			})
 		}
 	}
 });
