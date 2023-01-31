@@ -14,8 +14,9 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass" scoped>
-.page
-	background-image: linear-gradient(#006CA5, #009ACC)
-	height: 100vh
+<style lang="scss" scoped>
+.page {
+	background-image: linear-gradient(#006CA5, #009ACC);
+	height: 100vh;
+}
 </style>
