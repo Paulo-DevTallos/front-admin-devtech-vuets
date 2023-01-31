@@ -6,17 +6,20 @@
 					<img :src="logo" alt="logo E-tech principal">
 				</router-link>
 			</div>
+			<SidebarPlugins />
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import SidebarPlugins from '@/components/molecules/SidebarPlugins/index.vue';
 
 import logo from '@/assets/img/logo-dev-tech-nobg.png';
 
 export default defineComponent({
 	name: 'Sidebar',
+	components: { SidebarPlugins },
 	data() {
 		return {
 			logo: logo,
@@ -29,6 +32,7 @@ export default defineComponent({
 .sidebar {
 	width: 20%;
 	padding: 10px;
+	overflow: hidden;
 
 	.sidebar-container {
 		background-image: linear-gradient(to right, #f7f7f7, #ffffff);
