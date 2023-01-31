@@ -6,8 +6,8 @@ export default {
 		await employeeService.login(data).then(res => {
 			const accessToken = res.data.token;
 
-			console.log(res)
 			const decode = jwtDecode(accessToken);
+			console.log(res, decode)
 
 			commit("LOGIN", decode);
 
