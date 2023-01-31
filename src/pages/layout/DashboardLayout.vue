@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<Sidebar />
 		<div class="main-painel">
-			<p>Header</p>
+			<HeaderTemplate />
 			<main>
 				<Content />
 			</main>
@@ -15,9 +15,10 @@
 import { defineComponent } from "vue";
 import Content from "./Content.vue";
 import Sidebar from '@/components/organisms/Sidebar/index.vue';
+import HeaderTemplate from '@/components/organisms/Header/index.vue';
 
 export default defineComponent({
-  components: { Content, Sidebar },
+  components: { Content, Sidebar, HeaderTemplate },
 	name: 'DashboardLayout',
 });
 </script>
@@ -37,14 +38,15 @@ export default defineComponent({
 	margin: 0 auto;
 	margin-bottom: 20px;
 	height: 100%;
+	overflow: hidden;
 
 	.main-painel {
 		width: 85%;
 		min-height: 100vh;
-		background: red;
+		border-left: 1px solid rgb(214, 214, 214);
 
 		main {
-			height: 84%;
+			padding: 30px 0;
 		}
 	}
 }
